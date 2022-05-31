@@ -48,7 +48,7 @@ def process_image_1():
     out3 = model3(tensor3.to('cpu'))
     _, predicted3 = torch.max(out3, 1)
 
-    return jsonify({'msg': 'success', 'predictions': [int(predicted1[0]), int(predicted3[0])]})
+    return jsonify({'msg': 'success', 'predictions': [int(predicted1[0]), int(predicted3[0]), int(predicted3[0])]})
 
 
 # Setup function to detect car plate
