@@ -49,7 +49,7 @@ def process_image_1():
 
     return jsonify({'msg': 'success', 'predictions': [int(predicted1[0]), int(predicted3[0]), int(predicted3[0])]})
 
-
+"""
 # Setup function to detect car plate
 def carplate_detect(image):
     global carplate_haar_cascade
@@ -116,7 +116,7 @@ def process_image_2():
         carplate = ""
 
     return jsonify({'msg': 'success', 'prediction': carplate})
-
+"""
 
 if __name__ == "__main__":
     app.run(debug=True)
