@@ -1,7 +1,6 @@
 from joblib import load
 from timm.data import resolve_data_config
 from timm.data.transforms_factory import create_transform
-import pytesseract
 import cv2
 import easyocr
 import numpy as np
@@ -89,7 +88,7 @@ def process_image_2():
 
     npimg = np.fromfile(picture, np.uint8)
 
-    pytesseract.pytesseract.tesseract_cmd = r'tesseract.exe'
+    #  pytesseract.pytesseract.tesseract_cmd = r'tesseract.exe'
     # Read car image and convert color to RGB
 
     carplate_img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
