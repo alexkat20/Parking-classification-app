@@ -118,5 +118,4 @@ def process_image_2():
     return jsonify({'msg': 'success', 'prediction': carplate})
 """
 
-if __name__ == "__main__":
-    app.run(debug=True)
+app.run(debug=True)
