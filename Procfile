@@ -1,1 +1,1 @@
-web: gunicorn server:parking-classification-app
+web: gunicorn server:app
