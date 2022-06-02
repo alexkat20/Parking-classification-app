@@ -2,7 +2,7 @@ from joblib import load
 from timm.data import resolve_data_config
 from timm.data.transforms_factory import create_transform
 import cv2
-import easyocr
+#  import easyocr
 import numpy as np
 import torch
 from flask import Flask, request, jsonify
