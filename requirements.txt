@@ -1,11 +1,7 @@
--f https://download.pytorch.org/whl/torch_stable.html
-Flask==2.1.2
-gunicorn==20.1.0
 joblib==1.1.0
-numpy==1.22.4
-opencv-python==4.5.5.64
-opencv-python-headless==4.5.4.60
-Pillow==9.1.1
 timm==0.5.4
-torch==1.11.0+cpu
-torchvision==0.12.0+cpu
+opencv-python==4.5.5.64
+transformers==4.30.2
+torch==1.11.0
+Flask==2.1.2
+Pillow==9.1.1

@@ -13,6 +13,7 @@ from PIL import Image
 
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 
 
 carplate_haar_cascade = cv2.CascadeClassifier("haarcascade_russian_plate_number.xml")
@@ -21,8 +22,9 @@ classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnl
 
 @app.route("/predict_images", methods=["POST"])
 def process_image_1():
-    for file in request.files:
-        print(file)
+    for filename in request.files:
+        #  print(filename)
+        app.logger.critical("A critical message:", filename)
 
     file = request.files["image"]
     # Read the image via file.stream
@@ -64,6 +66,7 @@ def classify_transport_reviews():
     labels = ["artifacts", "animals", "food", "birds"]
     hypothesis_template = "This text is about {}."
     sequence = request.values["text"]
+    print()
 
     prediction = classifier(sequence, labels, hypothesis_template=hypothesis_template, multi_labeled=True)
 
@@ -71,4 +74,4 @@ def classify_transport_reviews():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
